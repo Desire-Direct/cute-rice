@@ -2,10 +2,3 @@
 defaults.pcm.card 1 
 defaults.ctl.card 1 
 
-
-#
-#HDMI.!default {
-#type hw
-#card 1
-#device 3
-#}
