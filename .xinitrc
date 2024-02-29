@@ -5,52 +5,17 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-# merge in defaults and keymaps
+#CUSTOM .xinitrc merges .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-if [ -f $sysresources ]; then
-
-
-
-
-
-
-
-    xrdb -merge $sysresources
-
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
-
-if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
-    xrdb -merge "$userresources"
-
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
-
-
-
-#[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-
+#activating custom .Xmodmap
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # start some nice programs
 xrdb -load ~/.Xresources
 urxvt &
 
-# Activate X key bindings
-xbindkeys
+xbindkeys & #bind keys
 
 # Start the i3 window manager 
 exec i3
