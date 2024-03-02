@@ -65,10 +65,14 @@
 #"rxvt"
 #  Control + b:2 + Release
 
-#Audio Control
+#Audio Control for usb keyboard
 # Mute volume
 "amixer set Master toggle"
 m:0x0 + c:67
+# Decrease volume
+"amixer set Master 5%-"
+# Increase volume
+"amixer set Master 5%+"
 
 
 
