@@ -1,8 +1,9 @@
 #!/bin/bash
 #reload $ . ~/.bashrc
 #
-#add color to directories
-alias ls='ls --color=auto'
+stty -ixon #disable ctrl-s /ctrl-q: pause terminal /paste gibberish
+shopt -s autocd #go to ~/directory, without cd
+alias ls='ls --color=auto' #add color to directories
 
 alias blog="cd /srv/http/lb"
 alias desire="cd /srv/http/desire-direct"
