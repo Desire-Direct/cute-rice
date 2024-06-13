@@ -14,6 +14,9 @@ alias grep='grep --color=auto' #add color to grep search
 alias blog="cd /srv/http/lb"
 alias desire="cd /srv/http/desire-direct"
 
+#R
+alias R="R --quiet" #no startup message
+
 #take screenshot with ImageMagick (for whole window add -window option)
 alias shoot="import root screenshot.jpg"
 
