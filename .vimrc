@@ -1,10 +1,7 @@
 syntax on
 set number
 
-" show date and time
-:command! GimmeDate echo call("strftime", [<args>])
-:GimmeDate "%F"  
-:GimmeDate "%H:%M" 
-
-
+" search
+set hlsearch " highlighting on
+set ignorecase " ignore capital letters during search
 
