@@ -10,8 +10,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 #
 xrdb -load ~/.Xresources
+
+~/.fehbg &
 urxvt &
 setxkbmap &
+xbindkeys & 
 
 exec i3 # Start the i3 window manager 
 
