@@ -1,19 +1,12 @@
 !show prompt at top of the screen
-URxvt*geometry: 80x240+0+0
-
+URxvt*geometry: 80x240+0+0 
 URxvt.scrollBar: false
-
-URxvt.font: xft:monospace:size=11
+URxvt*font: xft:monospace:size=11
 URxvt.letterSpace: -1
+URxvt*cursorColor: #800080
 
-!*.background: #c2b280
-!*.foreground: #3B3131
-
-!change to dark mode
-URxvt.keysym.C-1: command:\033]49;#1A2421\007\033]39;#90ee90\007
-
-!change to light mode
-URxvt.keysym.C-2: command:\033]49;#c2b280\007\033]39;#3B3131\007
+!HiDPI
+Xft.dpi: 144
 
 
 
