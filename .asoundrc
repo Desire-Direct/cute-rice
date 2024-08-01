@@ -2,3 +2,9 @@
 defaults.pcm.card 1 
 defaults.ctl.card 1 
 
+#bluetooth
+defaults.bluealsa {     
+service "org.bluealsa"     
+device "04:52:C7:F9:95:B6"
+profile "a2dp" 
+}
