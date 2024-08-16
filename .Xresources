@@ -1,15 +1,28 @@
-!show prompt at top of the screen
-URxvt*geometry: 80x240+0+0 
+! reload .Xresources  $ xrdb ~/.Xresources
+!
+! HiDPI
+Xft.dpi: 144
+!!
+! URxvt Configs
+! show prompt at the top of the screen
+URxvt*geometry: 80x240+0+0  
 URxvt.scrollBar: false
 URxvt*font: xft:monospace:size=11
-URxvt.letterSpace: -1
-URxvt*cursorColor: #800080
-
-!HiDPI
-Xft.dpi: 144
-
-
-
-
+URxvt*cursorColor: #16F529
+URxvt.cursorBlink: true
+*.foreground: #16F529
+*.background: #002D2D
+!
+! Perl extensions (resize-font not working yet!)
+URxvt.perl-ext-common: default,matcher,url-select,keyboard-select,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.colorUL: #0000ff
+!! url-select: Alt+u, move with up/down or j/k keys, open with Enter, copy with y, paste with shift+Insert
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+!! keyboard-select: Alt+Esc to act like VIM
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 
