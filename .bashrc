@@ -7,7 +7,7 @@ shopt -s autocd #go to ~/directory, without cd
 #HISTSIZE= HISTFILESIZE= #infinite command history
 
 #customize bash prompt
-export PS1="[\[\e[0;35m\]\u\[\e[0;0m\]@\[\e[0;36m\]\h\[\e[0m\] \w]\$ " #add color to user@host
+export PS1="[\[\e[0;36m\]\u\[\e[0;0m\]@\[\e[0;36m\]\h\[\e[0m\] \w]\$ " #add color to user@host
 alias ls='ls --color=auto' #add color to directories
 alias grep='grep --color=auto' #add color to grep search
 
