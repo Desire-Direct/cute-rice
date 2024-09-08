@@ -11,10 +11,11 @@ fi
 #
 xrdb -load ~/.Xresources
 
-~/.fehbg &
+#~/.fehbg &
 urxvt &
 setxkbmap &
 xbindkeys & 
+firefox &
 
 exec i3 # Start the i3 window manager 
 
