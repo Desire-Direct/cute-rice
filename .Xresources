@@ -10,8 +10,8 @@ URxvt.scrollBar: false
 URxvt*font: xft:monospace:size=11
 URxvt*cursorColor: #16F529
 URxvt.cursorBlink: true
-*.foreground: #16F529
-*.background: #002D2D
+!*.foreground: #16F529
+*.background: #F2DBE7
 !
 ! Perl extensions (resize-font not working yet!)
 URxvt.perl-ext-common: default,matcher,url-select,keyboard-select,resize-font
