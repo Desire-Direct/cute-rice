@@ -1,0 +1,7 @@
+# list video devices
+v4l2-ctl --list-devices
+
+# stream from webcam 
+ffplay /dev/videoX
+
+
