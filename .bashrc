@@ -18,8 +18,11 @@ alias blog="cd /srv/http/lb"
 alias desire="cd /srv/http/desire-direct"
 alias blue='bluetoothctl'
 #git
-alias ga='git add' # Add a file to Git.
-alias gc='git commit -m' # Commit changes to the code.
+#alias ga='git add' # Add a file to Git.
+#alias gc='git commit -m' # Commit changes to the code.
 #screenshot
 alias shoot='import root screenshot.jpg' #take pic of section
 alias shootall='import -window root screenshot.jpg' #take pic of whole window
+
+# connect to HDMI
+alias project='xrandr --output HDMI-1 --auto'
