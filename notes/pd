@@ -1,0 +1,32 @@
+audio examples in /usr/lib/pd/doc
+
+ALSA output error (snd_pcm_open): No such file or directory
+
+test MIDI in- and output !!!
+
+latency=time between in /output
+chapter3: in real time necessary to buffer; can be changed in Audio Settings->delay
+
+digital audio signals (SINUSOID) are sequences of numbers. sinusoid is a tone (not noise).
+n=sample number(variable?) 
+single number=sample
+
+a=amplitude (the peak /RMS) measured in decibels
+w=angular frequency 
+0=initial phase, which is phase at the zeroth sample (n=0)
+
+our ears use the same technology to parse incoming sounds?
+R=sample rate (number of samples that fit into a second)
+sinusoidal signal with angular frequency w, real-time frequence
+
+equals Hertz(cycles per second), a cycle is 2n radians?
+"real-world" "audio signal" amplitude (full breath, reduced to loudness? only simpleton would think that)=time-varying voltage or AIR PRESSURE
+BUT digital audio signal are unitless??? numbers : see hardware what it allows!! (often just in the range of 1 and -1)
+
+UNITS OF AMPLITUDE
+two amplitudes can be compared rather through ratio than to difference.
+(eg is greater by a factor of two)
+range of human hearing 0-100db, decibel is just convinient
+Amplitude is also related to musical dynamic.
+dynamic=messure of effort, rather than loudness or power.
+It ranges over nine values: rest, ppp, pp, p, mp, mf, f, ff, fff.
