@@ -1,8 +1,12 @@
 audio examples in /usr/lib/pd/doc
 
 ALSA output error (snd_pcm_open): No such file or directory
+test MIDI in- and output > works
 
-test MIDI in- and output !!!
+object's class depends on the first word, what follows is a creation argument.
+https://github.com/cuinjune/pd-tutorial
+error: couldn't create [object]
+after making float example work, but got a comment box.
 
 latency=time between in /output
 chapter3: in real time necessary to buffer; can be changed in Audio Settings->delay
@@ -30,3 +34,5 @@ range of human hearing 0-100db, decibel is just convinient
 Amplitude is also related to musical dynamic.
 dynamic=messure of effort, rather than loudness or power.
 It ranges over nine values: rest, ppp, pp, p, mp, mf, f, ff, fff.
+
+
