@@ -1,0 +1,96 @@
+*ALSA* (Advanced Linux Sound Architecture)
+is a soundcard driver.    
+I've installed alsa-utils -> alsamixer working.
+
+arecord --list-devices
+aplay -l (gives more detailed info)
+
+lspci -k -nn -d ::0403 (shows Kernel driver /modules in use, mine: snd_hda_intel)
+has alsa installed the correct driver for my soundcard?
+
+two cards, HDMI=0 and PCH=1
+thus card 1, 
+device 0 [default], which is playback type (output)
+subdevice 1/1, has to do with endpoint (speakers)
+card interface: e.g. hw (it's a plugin), which is sound card's PCM (Pulse Code Modulation) device.
+
+NEED TO CHANGE CARD INDEX! pch should be 0
+https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Cards_and_modules
+create /etc/modprobe.d/alsa-base.conf
+options snd_hda_intel index=1,0 -> changes index
+
+norm sampling rate: 44.1kHz
+channels!! 2 for stereo
+
+ALSAMIXER
+with F4 access Capture interface.
+what levels are normal?
+
+aplay and arecord shows error: ALSA lib pcm_dsnoop.c:567:(snd_pcm_dsnoop_open) unable to open slave arecord: main:850: audio open error: Device or resource busy
+SOLUTION: need to share device with 'dmix' (virtual PCM device)
+https://www.codestudy.net/blog/alsa-open-a-pcm-device-in-shared-mode/
+
+alsa-plugins is installed;
+ 
+arecord:
+8-bit sampling, lots of noise
+output:
+Recording WAVE 'recorder.wav' : Unsigned 8 bit, Rate 8000 Hz, Mono
+
+to increase resolution, use f argument,  e.g. '-f S16_LE'
+Signed 16 bit Little Endian, Rate 8000 Hz, Mono
+
+***********
+I NEED BASE
+pulseaudio is a sound server.
+For installation was asked to remove pipewire-alsa;
+extra installation: pulseaudio-alsa and pulesaudio-bluetooth;
+All text mixers are in the AUR! >:(
+installed pavucontrol, and tested it against alsamixer, and they interact with each other. 
+
+pulseaudio-alsa installed
+reiinstalled pulseaudio & pavucontrol >:9
+
+config daemon.conf, remove .asoundrc
+
+REMOVED EVERYTHING + PULSEAUDIO-BLUETOOTH
+***********
+BLUETOOTH
+
+sudo systemctl status bluetooth.service > active
+
+installed: bluez, bluez-utils, pulseaudio-bluetooth
+
+what is my controller /mac_address of bt device /adapter
+'hcitool dev' > hci0 4C:34:88:1C:42:DC
+as confirmed by 'bluetoothctl list'
+
+any attempt of T450s to connect with speaker fails, instead speaker connects to shut chromebook
+solution:
+RESET speaker to factory settings: press button power button until prompted to select language with [ ... ]
+
+device "04:52:C7:F9:95:B6" (Bose speaker)
+connection failed, key missing
+
+scan on: LE-Bose Revolve SoundLink shows up as Name and Alias
+
+does my bluebooth share its chip with wifi?
+disabled Bluetooth coexistance  in /etc/modprobe.d/iwlwifi.conf
+
+does work now but still crackling sound!
+
+***********
+PIPEWIRE
+pipewire=low-level multimedia framework
+pipewire supports the latest codecs, standard codec is LC3.
+
+installed pipewire-pulse, which removed pulseaudio
+		
+		REMOVED 
+***********
+
+
+
+
+
+
