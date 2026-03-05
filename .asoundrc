@@ -1,8 +1,35 @@
-#sound laptop speakers
-defaults.pcm.card 1 
-defaults.ctl.card 1 
+# sound laptop speakers
+defaults.pcm.card 0
+defaults.ctl.card 0 
 
-#bluetooth
+# https://www.alsa-project.org/main/index.php/Asoundrc#dmix
+pcm.!default { 
+	type plug 
+	slave.pcm "dmixer" 
+} 
+
+pcm.dmixer  {   
+	type dmix   
+	ipc_key 1024   
+	slave { 
+		pcm "hw:0,0" 
+		period_time 0 
+		period_size 1024 
+		buffer_size 4096 
+		rate 44100 
+	} 
+	bindings { 
+		0 0 
+		1 1 
+	} 
+} 
+
+ctl.dmixer { 
+	type hw 
+	card 0 
+}
+
+# bluetooth
 defaults.bluealsa {     
 service "org.bluealsa"     
 device "04:52:C7:F9:95:B6"
