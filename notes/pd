@@ -3,6 +3,10 @@ audio examples in /usr/lib/pd/doc
 ALSA output error (snd_pcm_open): No such file or directory
 test MIDI in- and output > works (not)
 alsa-plugin dmix works on my computer, not with pd though?
+QUICK AND DIRTY FIX: 
+Identify processes using sound device files: 
+fuser --all --verbose /dev/snd/*
+then "kill PID"
 
 object's class depends on the first word, what follows is a creation argument.
 https://github.com/cuinjune/pd-tutorial
