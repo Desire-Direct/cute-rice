@@ -28,7 +28,6 @@ what levels are normal?
 
 aplay and arecord shows error: ALSA lib pcm_dsnoop.c:567:(snd_pcm_dsnoop_open) unable to open slave arecord: main:850: audio open error: Device or resource busy
 SOLUTION: need to share device with 'dmix' (virtual PCM device)
-https://www.codestudy.net/blog/alsa-open-a-pcm-device-in-shared-mode/
 
 alsa-plugins is installed;
  
