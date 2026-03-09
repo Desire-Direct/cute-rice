@@ -1,13 +1,17 @@
 *ALSA* (Advanced Linux Sound Architecture)
 is a soundcard driver.    
-I've installed alsa-utils -> alsamixer working.
 
-arecord --list-devices
-aplay -l (gives more detailed info)
+alsa-plugins, alsa-utils installed; -> alsamixer working.
+
+ALSAMIXER
+with F4 access Capture interface.
+what levels are normal?
 
 lspci -k -nn -d ::0403 (shows Kernel driver /modules in use, mine: snd_hda_intel)
 has alsa installed the correct driver for my soundcard?
 
+List PLAYBACK devices: aplay -l 
+**********
 two cards, HDMI=0 and PCH=1
 thus card 1, 
 device 0 [default], which is playback type (output)
@@ -19,18 +23,17 @@ https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Cards_and_mod
 create /etc/modprobe.d/alsa-base.conf
 options snd_hda_intel index=1,0 -> changes index
 
+WHAT TO PUT IN pd PREFERENCES IF hw IS A PLUGIN?
+
 norm sampling rate: 44.1kHz
 channels!! 2 for stereo
-
-ALSAMIXER
-with F4 access Capture interface.
-what levels are normal?
 
 aplay and arecord shows error: ALSA lib pcm_dsnoop.c:567:(snd_pcm_dsnoop_open) unable to open slave arecord: main:850: audio open error: Device or resource busy
 SOLUTION: need to share device with 'dmix' (virtual PCM device)
 
-alsa-plugins is installed;
- 
+created /etc/asound.conf and enabled dmix globally;
+in /etc there is alsa folder with conf.d files, but not for dmix 
+
 arecord:
 8-bit sampling, lots of noise
 output:
@@ -38,6 +41,15 @@ Recording WAVE 'recorder.wav' : Unsigned 8 bit, Rate 8000 Hz, Mono
 
 to increase resolution, use f argument,  e.g. '-f S16_LE'
 Signed 16 bit Little Endian, Rate 8000 Hz, Mono
+
+***********
+JACK Audio Connection Kit - pro sound server daemon
+installed: jack2, jack2-dbus, qjackctl
+
+up and running, how to start at boot without qjackctl (dbus)?
+starts with - jackd
+- jack_control script (jack2-dbus package)
+- jack@.service (systemd) configured in /etc/jack/example.conf, note: Device hw is set to 0
 
 ***********
 I NEED BASE
